@@ -1,7 +1,11 @@
 import React from "react";
 
+import Hero from "../components/hero";
+
 function home(props) {
-  return <p>Welcome to Home!</p>;
+  return (
+    <Hero title={props.title} subtitle={props.subtitle} text={props.text} />
+  );
 }
 
 export default home;
