@@ -1,9 +1,24 @@
 import React from "react";
+import CardInfo from "./projcardinfo";
 
 function Card(props) {
   return (
-    <div>
-      <img className="" src={props.item.imgSrc} alt={props.item.imgSrc} />
+    <div
+      className="d-inline-block t-card"
+      onClick={(e) => props.click(props.item)}
+    >
+      <img
+        className="t-card-image"
+        src={props.item.imgSrc}
+        alt={props.item.imgSrc}
+      />
+      {props.item.selected && (
+        <CardInfo
+          title={props.item.title}
+          subtitle={props.item.subtitle}
+          link={props.item.link}
+        />
+      )}
     </div>
   );
 }

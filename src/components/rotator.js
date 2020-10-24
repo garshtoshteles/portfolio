@@ -82,7 +82,7 @@ class Rotator extends React.Component {
       return (
         <Card
           item={item}
-          onClick={(e) => this.handleCC(item.id, e)}
+          click={(e) => this.handleCC(item.id, e)}
           key={item.id}
         />
       );
