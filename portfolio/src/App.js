@@ -3,9 +3,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import "./App.css";
 
+import "./App.css";
 import Footer from "./components/footer";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Contact from "./pages/contact";
 
 class App extends React.Component {
   constructor(props) {
@@ -53,6 +56,38 @@ class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <Home
+                title={this.state.home.title}
+                subtitle={this.state.home.subtitle}
+                text={this.state.home.text}
+              />
+            )}
+          />
+          <Route
+            path="/about"
+            render={() => (
+              <About
+                title={this.state.about.title}
+                subtitle={this.state.about.subtitle}
+                text={this.state.about.text}
+              />
+            )}
+          />
+          <Route
+            path="/contact"
+            render={() => (
+              <Contact
+                title={this.state.contact.title}
+                subtitle={this.state.contact.subtitle}
+                text={this.state.contact.text}
+              />
+            )}
+          />
 
           <Footer />
         </Container>
